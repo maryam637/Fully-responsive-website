@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:white;
+}
+.nav-bar {
+  background:rgb(80, 87, 90);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li {
+  margin-right: 20px;
+}
+.nav-links a:hover {
+  color:rgb(80, 87, 90);
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+#menu-toggle {
+  display: none;
+}
+header {
+  color: #fff;
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+}
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 247, 247, 0.5);
+  z-index: 0;
+}
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+  color: black;
+}
+.homes{
+color: black;
+text-align: center;
+position: relative;
+font-family: Arial, sans-serif;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background:white;
+  padding: 50px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+.card:hover{
+  cursor: pointer;
+}
+button{
+  color: rgb(18, 135, 230);
+  border: 1px solid rgb(18, 135, 230);
+}
+button:hover{
+  background-color: rgb(18, 135, 230);
+  color: rgb(244, 236, 236);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    padding: 20px;
+  }
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+  .nav-links li {
+    margin-bottom: 20px;
+  }
+  .menu-icon {
+    display: block;
+  }
+  header h1 {
+    font-size: 2em;
+  }
+}
